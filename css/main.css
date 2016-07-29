@@ -1,0 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300);
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0px; }
+
+.page-title {
+  background-color: #ba0aff;
+  color: #fff;
+  margin: 0px;
+  padding: 20px;
+  text-align: center; }
+
+.board {
+  margin: 0 auto;
+  height: 450px;
+  min-height: 450px;
+  min-width: 450px;
+  width: 450px; }
+
+.board__row {
+  height: 33.33%; }
+
+.board__row__square {
+  background-color: #fff;
+  border: 2px solid black;
+  display: inline-block;
+  min-height: 100%;
+  min-width: 33.33%;
+  transition: all 0.3s ease-in-out; }
+
+.board__row__square:hover {
+  border: 3px solid #ffaf4b;
+  transform: scale(0.9); }
+
+.board__row__square--winner {
+  border: 3px solid #66a8a1;
+  transform: scale(0.9); }
