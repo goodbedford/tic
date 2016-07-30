@@ -11,11 +11,37 @@
     <header>
       <h1 class="page-title">Tic Tac Toe</h1>
     </header>
-    <button class="btn-clear">clear</button>
-    <div class="player-stats">place holder player stats</div>
+    <div class="stats-target">
+      <ul class="gameboard-instructions">
+        <li id="step1" class="gameboard-instructions__card gameboard-instructions__card--active onboard-steps-intro-ani">
+          <button id="startGame" class="gameboard-instructions__btn">Start</button>
+        </li>
+        <li id="step2" class="gameboard-instructions__card">
+          <button id="onePlayerGame" class="gameboard-instructions__btn">1 Player</button>
+          <button id="twoPlayerGame" class="gameboard-instructions__btn">2 Player</button>
+        </li>
+        <li id="step3" class="gameboard-instructions__card">
+          <button id="gamePieceX" class="gameboard-instructions__btn">X</button>
+          <button id="gamePieceO" class="gameboard-instructions__btn">O</button>
+        </li>
+        <li id="step4" class="gameboard-instructions__card gameboard-instructions__card--stats">
+          <span id="player1" class="gameboard-instructions__img-container">
+            <span class="gameboard-instructions__img-container__img">P1</span>
+          </span>
+          <span class="gameboard-instructions__game-state-container">
+            <span>VS</span>
+            <span class="gameboard-instructions__game-state-container__state"></span>
+          </span>
+          <span id="player2" class="gameboard-instructions__img-container">
+            <span class="gameboard-instructions__img-container__img">P2</span>
+          </span>
+        </li>
+      </ul>
+    </div>
     <div class="gameboard-target">
     <div class="gameboard-stats-target"></div>
     </div>
+    <button class="btn-clear">clear</button>
 
     <script  src="js/board.js" defer></script>
     <script src="js/app.js" defer></script>

@@ -1,0 +1,86 @@
+
+
+
+@keyframes gameboard-hover {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    color: $color-orange;
+    transform: scale(0.9);
+  }
+}
+
+.gameboard-hover-ani {
+  animation-name: "gameboard-hover";
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  // animation-delay: 0s;
+}
+
+@keyframes gameboard-winner {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    color: $color-orange;
+    transform: scale(1.2);
+  }
+  100% {
+    color: $color-green;
+    background-color: lighten($color-green, 10%);
+    transform: scale(0.9);
+
+  }
+}
+
+.gameboard-winner-ani {
+  animation-name: "gameboard-winner";
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+  z-index: 200;
+}
+@keyframes onboard-steps-intro {
+  0%{
+    display: inline-block;
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.onboard-steps-intro-ani {
+  animation-name: "onboard-steps-intro";
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes onboard-steps-outro {
+  0%{
+    display: inline-block;
+    transform: translateX(0%);
+  }
+  10% {
+    transform: translateX(10%);
+  }
+  99% {
+    transform: translateX(-100%);
+  }
+  100% {
+    display: none;
+    opacity: 1;
+  }
+}
+.onboard-steps-outro {
+  animation-name: "onboard-steps-outro";
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+}
