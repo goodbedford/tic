@@ -9,7 +9,9 @@
   </head>
   <body>
     <header>
-      <h1 class="page-title">Tic Tac Toe</h1>
+      <h1 class="page-title"><span class="page-title__text">Tic Tac Toe</span>
+        <button class="btn-clear">New Game</button>
+</h1>
     </header>
     <div class="stats-target">
       <ul class="gameboard-instructions">
@@ -18,7 +20,7 @@
         </li>
         <li id="step2" class="gameboard-instructions__card">
           <button id="onePlayerGame" class="gameboard-instructions__btn">1 Player</button>
-          <button id="twoPlayerGame" class="gameboard-instructions__btn">2 Player</button>
+          <button id="twoPlayerGame" class="gameboard-instructions__btn none gameboard-instructions__card--hide">2 Player</button>
         </li>
         <li id="step3" class="gameboard-instructions__card">
           <button id="gamePieceX" class="gameboard-instructions__btn">X</button>
@@ -41,7 +43,6 @@
     <div class="gameboard-target">
     <div class="gameboard-stats-target"></div>
     </div>
-    <button class="btn-clear">clear</button>
 
     <script  src="js/board.js" defer></script>
     <script src="js/app.js" defer></script>
