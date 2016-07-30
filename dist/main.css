@@ -3,8 +3,11 @@
   box-sizing: border-box; }
 
 body {
+  background: -webkit-linear-gradient(white 20%, #ffdcb1);
+  background: linear-gradient(white 20%, #ffdcb1);
   color: #63008a;
   font-family: "Source Sans Pro", sans-serif;
+  height: 100vh;
   margin: 0px; }
 
 @-webkit-keyframes gameboard-hover {
@@ -158,11 +161,15 @@ body {
           flex: 1 0 auto;
   margin: auto 20px auto 0px;
   min-height: 50px;
+  outline: none;
   -webkit-transition: 0.3s all;
   transition: 0.3s all; }
 
 .btn-clear:hover {
   box-shadow: 0px 0px 3px 5px rgba(255, 255, 255, 0.5); }
+
+.btn-clear:active, :focus {
+  outline: none; }
 
 .page-title {
   -webkit-box-align: center;
@@ -191,6 +198,7 @@ body {
   text-shadow: 2px 3px 4px rgba(49, 49, 49, 0.5); }
 
 .board {
+  background-color: transparent;
   box-shadow: 1px 2px 3px rgba(49, 49, 49, 0.5);
   height: 450px;
   margin: 0 auto;
@@ -246,7 +254,7 @@ body {
   display: block;
   height: 100px;
   list-style-type: none;
-  margin: 0px;
+  margin: 0;
   min-height: 100px;
   overflow: hidden;
   padding: 10px; }
@@ -270,6 +278,9 @@ body {
   background: -webkit-linear-gradient(290deg, #ba0aff, #d770ff);
   background: linear-gradient(160deg, #ba0aff, #d770ff); }
 
+.gameboard-instructions__btn--hide {
+  display: none; }
+
 .gameboard-instructions__card {
   display: inline-block;
   height: 100%;
@@ -290,7 +301,7 @@ body {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 0px; }
+  margin: 0; }
 
 .gameboard-instructions__img-container {
   -webkit-box-align: center;
@@ -337,6 +348,5 @@ body {
   font-weight: bold;
   text-shadow: 1px 2px 2px rgba(49, 49, 49, 0.5); }
 
-.off {
-  -webkit-transform: translateX(500%);
-          transform: translateX(500%); }
+.gameboard-instructions--hide {
+  display: none; }

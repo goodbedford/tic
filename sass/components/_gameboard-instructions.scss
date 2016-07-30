@@ -77,4 +77,6 @@
     font-weight: bold;
     text-shadow: 1px 2px 2px rgba($color-dark, 0.5);
 }
-.gameboard-instructions--hide
+.gameboard-instructions--hide {
+  display: none;
+}

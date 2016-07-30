@@ -5,7 +5,9 @@
 
 
 body  {
+  background: linear-gradient(lighten($color-gray, 50%)20%, lighten($color-orange, 20%));
   color: $color-purple-dark;
   font-family: "Source Sans Pro", sans-serif;
+  height: 100vh;
   margin: 0px;
 }

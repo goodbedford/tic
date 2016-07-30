@@ -2,25 +2,21 @@ var Board = new Board(3, 3);
 var game = new Game();
 var board = Board.getBoard();
 var boardTarget = document.querySelector(".gameboard-target");
-var boardBlocker = document.createElement("div")
+var boardBlocker = document.createElement("div");
+var btn = document.querySelector(".btn-clear");
 boardBlocker.classList.add("board__blocker");
 
-
+//activate event listeners
 activate();
 
 function activate() {
     game.moveHandler(Board.getSquares(), game.getTurn);
     board.appendChild(boardBlocker);
     boardTarget.appendChild(board);
-
+    btn.addEventListener("click", function(e) {
+        Board.clearBoard();
+    });
 }
-
-
-
-var btn = document.querySelector(".btn-clear");
-btn.addEventListener("click", function(e) {
-    Board.clearBoard();
-});
 
 function Game() {
     var onePlayerGame = false;
@@ -37,16 +33,11 @@ function Game() {
 
     this.getStart = getStart;
     this.rounds = 5;
-    this.winner;
-    this.loser;
-    // this.numOfPlayers;  // 1, 2
     this.gameTurn;
-    // this.getPlayers = getPlayers; delete
     this.getNumOfPlayer = getNumOfPlayer;
     this.moveHandler = moveHandler;
     this.getTurn = getTurn;
     this.setTurn = setTurn;
-    // this.checkForWinnerHandler = checkForWinnerHandler;
     step1Listener();
     step2NumOfPlayers1Listener();
     step2NumOfPlayers2Listener();
@@ -103,7 +94,6 @@ function Game() {
             var parent = this.parentElement;
             parent.classList.remove("onboard-steps-intro-ani");
             parent.classList.add("onboard-steps-outro");
-            setGamePieceX();
             setTurn("x");
             var step4 = document.querySelector("#step4");
             setTimeout(function() {
@@ -121,7 +111,6 @@ function Game() {
             var parent = this.parentElement;
             parent.classList.remove("onboard-steps-intro-ani");
             parent.classList.add("onboard-steps-outro");
-            setGamePieceO();
             setTurn("o");
             var step4 = document.querySelector("#step4");
             setTimeout(function() {
@@ -149,22 +138,12 @@ function Game() {
         numOfPlayers = numOfPlayers;
     }
 
-    // function setGamePieceX() {
-    //     players.player1 = "x";
-    //     players.player2 = "o";
-    // }
-    //
-    // function setGamePieceO(o) {
-    //     players.player1 = "o";
-    //     players.player2 = "x";
-    // }
-
     function setTurn(turn) {
         console.log("set turn", turn);
         var target = document.querySelector(".gameboard-instructions__game-state-container__state");
         if(start) {
           player1 = turn;
-          start false;
+          start = false;
         }
         gameTurn = turn;
 
@@ -200,10 +179,10 @@ function Game() {
                 if (this.innerHTML === "") {
                     if (currentTurn() == "x") {
                         this.innerHTML = "x";
-                        checkForWinner(squares, currentTurn, players);
+                        checkForWinner(squares, currentTurn);
                     } else {
                         this.innerHTML = "o";
-                        checkForWinner(squares, currentTurn, players);
+                        checkForWinner(squares, currentTurn);
                     }
                 } else {
                     alert("Try another square!");
@@ -325,28 +304,33 @@ function Game() {
             if (turn == "x") {
               if(player1 == "x") {
                 setTurn("o");
-              } else {
-                setTurn("o");
-                while(search) {
-                  rand = Math.floor(Math.random() * 9) +1;
-                  if(squares[rand] == "") {
-                    search = false;
-                    squares[rand].click();
+                setTimeout(function(){
+                  while(search) {
+                    rand = Math.floor(Math.random() * 8);
+                    console.log("rand", rand);
+                    if(squares[rand].innerHTML == "") {
+
+                      search = false;
+                      squares[rand].click();
+                      setTurn("x");
+                    }
                   }
-                }
+                }, 1500);
               }
             } else {
               if(player1 == "o") {
                 setTurn("x");
-              } else {
-                setTurn("x");
-                while(search) {
-                  rand = Math.floor(Math.random() * 9) +1;
-                  if(squares[rand] == "") {
-                    search = false;
-                    squares[rand].click();
+                setTimeout(function(){
+                  while(search) {
+                    rand = Math.floor(Math.random() * 8);
+                    console.log("rand", rand);
+                    if(squares[rand].innerHTML == "") {
+                      search = false;
+                      squares[rand].click();
+                      setTurn("o");
+                    }
                   }
-                }
+                }, 1500);
               }
             }
         }
