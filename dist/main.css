@@ -200,12 +200,10 @@ body {
 .board {
   background-color: transparent;
   box-shadow: 1px 2px 3px rgba(49, 49, 49, 0.5);
-  height: 450px;
+  height: 300px;
   margin: 0 auto;
-  min-height: 450px;
-  min-width: 450px;
   position: relative;
-  width: 450px;
+  width: 300px;
   z-index: 50; }
 
 .board__blocker {
@@ -233,8 +231,7 @@ body {
   color: #63008a;
   display: inline-block;
   font-size: 50px;
-  line-height: 150px;
-  min-height: 150px;
+  line-height: 100px;
   min-width: 33.33%;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -315,13 +312,13 @@ body {
   display: -ms-flexbox;
   display: flex;
   font-weight: bold;
-  height: 50px;
+  min-height: 50px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   overflow: hidden;
   margin: 0 80px;
-  width: 50px; }
+  min-width: 50px; }
 
 .gameboard-instructions__img-container--active {
   background: -webkit-linear-gradient(190deg, yellow, #97c4bf);
