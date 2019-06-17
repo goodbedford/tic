@@ -2,7 +2,7 @@
 
 function Board(numOfRows, squaresPerRow) {
   var makeBoard = makeBoard();
-  var rows;
+  var Rrows;
   var rowsLen;
   var squares;
   this.board = makeBoard;
